@@ -1,51 +1,80 @@
-# Leetcode em Python
+﻿# LeetCode em Python
 
-Este repositório reúne meus estudos de lógica de programação e resolução de problemas no **LeetCode** usando **Python**.
-
-A ideia aqui é praticar:
-
-- algoritmos
-- estruturas básicas
-- raciocínio para entrevistas
-- organização das soluções por tema
+Este repositório contém minhas soluções para problemas do LeetCode usando Python.
+Ele reflete meus momentos me divertindo com a linguagem enquanto pratico estruturas de dados, padrões e raciocínio lógico.
+Também serve como registro histórico da minha evolução, dos desafios mais simples até os mais complexos.
 
 ## Estrutura
 
-No momento, os exercícios estão separados por categoria:
+As soluções estão separadas por tema:
 
 ```text
 array_string/
+prefix_sum/
+sliding_window/
+two_pointers/
 ```
 
-Dentro dessa pasta ficam os arquivos com as soluções dos problemas, por exemplo:
+## Catálogo resumido
 
-- `merge_strings_alternately.py`
-- `greatest_common_divisor_of_strings.py`
-- `kids_with_the_greatest_number_of_candies.py`
+### `array_string`
 
-## Como estou estudando
+- `merge_strings_alternately.py`  
+  LeetCode 1768 - Merge Strings Alternately.  
+  O que faz: intercala os caracteres de duas strings e adiciona o restante da maior no fim.  
+  Como resolvi: loop até o tamanho máximo, adicionando letra por letra de cada string quando existir índice válido.
 
-Minha proposta neste repositório é:
+- `greatest_common_divisor_of_strings.py`  
+  LeetCode 1071 - Greatest Common Divisor of Strings.  
+  O que faz: encontra a maior string que divide duas strings por repetição.  
+  Como resolvi: valido padrão com concatenação (`str1 + str2 == str2 + str1`) e uso `gcd` dos tamanhos para cortar o prefixo correto.
 
-- resolver problemas aos poucos
-- deixar registrado meu raciocínio no código
-- praticar testes em alguns exercícios
-- evoluir a organização conforme eu for avançando
+- `kids_with_the_greatest_number_of_candies.py`  
+  LeetCode 1431 - Kids With the Greatest Number of Candies.  
+  O que faz: retorna quais crianças podem chegar ao maior número de doces com os extras.  
+  Como resolvi: pego o máximo atual da lista e comparo cada valor somado aos doces extras.
+
+### `two_pointers`
+
+- `is_subsequence.py`  
+  LeetCode 392 - Is Subsequence.  
+  O que faz: verifica se uma string `s` é subsequência de `t`.  
+  Como resolvi: avanço um ponteiro em `s` enquanto percorro `t` até casar todos os caracteres.
+
+- `move_zeroes.py`  
+  LeetCode 283 - Move Zeroes.  
+  O que faz: move todos os zeros para o final mantendo a ordem dos não zeros.  
+  Como resolvi: uso ponteiro de posição para compactar não zeros no início e preencho o restante com zero.
+
+### `sliding_window`
+
+- `maximum_average_subarray.py`  
+  LeetCode 643 - Maximum Average Subarray I.  
+  O que faz: calcula a maior média de subarray com tamanho fixo `k`.  
+  Como resolvi: mantenho soma da janela atual, deslizo removendo o que sai e somando o que entra, e guardo a maior soma.
+
+### `prefix_sum`
+
+- `find_pivot_index.py`  
+  LeetCode 724 - Find Pivot Index.  
+  O que faz: encontra o índice onde soma da esquerda e da direita são iguais.  
+  Como resolvi: calculo soma total, acumulo soma da esquerda e comparo com a soma da direita em cada posição.
+
+- `find_the_highest_altitude.py`  
+  LeetCode 1732 - Find the Highest Altitude.  
+  O que faz: retorna a maior altitude atingida a partir de variações de ganho/perda.  
+  Como resolvi: acumulo altitude atual e atualizo o máximo encontrado durante a travessia.
 
 ## Como executar
 
-Para rodar um arquivo:
+No diretório raiz:
 
 ```bash
-python array_string/nome_do_arquivo.py
+python caminho/do/arquivo.py
 ```
 
-Se o arquivo tiver testes com `unittest`, também dá para executar diretamente:
+Exemplo:
 
 ```bash
-python array_string/greatest_common_divisor_of_strings.py
+python two_pointers/is_subsequence.py
 ```
-
-## Objetivo
-
-Construir uma base sólida em Python enquanto pratico problemas comuns de programação e melhoro minha forma de pensar soluções.
